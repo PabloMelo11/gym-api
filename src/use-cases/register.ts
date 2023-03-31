@@ -1,5 +1,6 @@
 import { hash } from 'bcryptjs';
 import { prisma } from '@/lib/prisma';
+import { UsersRepository } from '@/repositories/users-repository';
 
 interface RegisterUseCaseRequest {
   name: string;
@@ -8,7 +9,7 @@ interface RegisterUseCaseRequest {
 }
 
 export class RegisterUseCase {
-  constructor(private usersRepository: any) {}
+  constructor(private usersRepository: UsersRepository) {}
 
   async execute({ email, name, password }: RegisterUseCaseRequest) {
     const passwordHash = await hash(password, 6);
