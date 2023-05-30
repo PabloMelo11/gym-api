@@ -9,9 +9,10 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 /**
- * #1 - execute npm link in this path
- * #2 - back to main path project
- * #3 - execute npm link vitest-environment-prisma
+ * # STEPS:
+ * 1 - execute npm link in this path
+ * 2 - back to main path project
+ * 3 - execute npm link vitest-environment-prisma
  */
 
 function generateDatabaseUrl(schema: string) {
